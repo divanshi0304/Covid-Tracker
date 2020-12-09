@@ -19,7 +19,11 @@ class Graph
 		void shortestPath(string landmark)
 		{
 			unordered_map<string,int,bool> dist;
-			
+			if([n[0].second]==true)
+			{
+				cout<<landmark<<"is the nearest Covid Centre to you"<<endl; 
+				return;
+			}
 			//Set all distances to max
 			for(auto entry:n)
 				dist[entry.first]=INT_MAX;
@@ -37,7 +41,7 @@ class Graph
 				s.erase(s.begin());
 				
 				//iterate over ngbrs of current node
-				for(auto ngbrs:n[node])
+				for(auto ngbrs:n[node,false])
 				{
 					if(nodeDist+ngbrs.second<dist[ngbrs.first])
 					{
