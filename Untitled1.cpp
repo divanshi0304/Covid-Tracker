@@ -56,6 +56,37 @@ class Graph
 				}
 			}
 			
+			T closestCentre;
+			int minDist=INT_MAX;
+			for(auto d:dist)
+			{
+            			T centre=d.first;
+            			int dist=d.second;
+            			if(dist<minDist)
+            			{
+            				minDist=dist;
+            				closestCentre=centre;
+				}
+				cout<<d.first<<" is located at distance of  "<<d.second<<endl;
+        		}
+        		cout<<closestCentre<<" is located at distance of  "<<minDist<<endl;
 		}
 };
+int main()
+{
+    Graph<string> india;
+    india.addEdge("Amritsar","Delhi",1);
+    india.addEdge("Amritsar","Jaipur",4);
+    india.addEdge("Jaipur","Delhi",2);
+    india.addEdge("Jaipur","Mumbai",8);
+    india.addEdge("Bhopal","Agra",2);
+    india.addEdge("Mumbai","Bhopal",3);
+    india.addEdge("Agra","Delhi",1);
+    //india.printAdj();
+    india.shortestPath("Amritsar");
+
+
+ return 0;
+}
+
 
