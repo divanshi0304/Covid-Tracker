@@ -20,7 +20,7 @@ class Graph
 		void shortestPath(T landmark)
 		{
 			unordered_map<T,int> dist;
-			if(landmark.at[0]=='C')
+			if(landmark.at(0)=='C')
 			{
 				cout<<landmark<<"is the nearest Covid Centre to you"<<endl; 
 				return;
@@ -60,16 +60,17 @@ class Graph
 			int minDist=INT_MAX;
 			for(auto d:dist)
 			{
-            			T centre=d.first;
-            			int dist=d.second;
-            			if(dist<minDist)
-            			{
-            				minDist=dist;
-            				closestCentre=centre;
+				T centre=d.first;
+				int dist=d.second;
+				char ch=centre.at(0);
+				if(ch=='C' && dist<minDist)
+				{
+					minDist=dist;
+					closestCentre=centre;
 				}
 				cout<<d.first<<" is located at distance of  "<<d.second<<endl;
-        		}
-        		cout<<closestCentre<<" is located at distance of  "<<minDist<<endl;
+			}
+			cout<<closestCentre<<" is located at distance of  "<<minDist<<endl;
 		}
 };
 int main()
