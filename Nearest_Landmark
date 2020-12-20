@@ -78,8 +78,7 @@ int main()
 	
 // 	// call the distance function 
 // 	cout << setprecision(15) << fixed; 
-// 	cout << distance(lat1, long1, 
-// 					lat2, long2) << " KM"; 
+// 	cout << distance(lat1, long1, lat2, long2) << " KM"; 
 	
     return 0; 
 } 
